@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <!-- Botón para volver a la página de inicio, ubicado en la parte superior -->
+  <div class="row">
+    <div class="col-12 text-right">
+      <button (click)="goBack()" class="btn btn-secondary mb-3">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Sección de selección de raza -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center">Select a Breed</h2>
+      <div class="form-group">
+        <select class="form-control" (change)="onBreedSelect($event)">
+          <option *ngFor="let breed of breeds" [value]="breed.id">{{ breed.name }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de información de la raza seleccionada -->
+  <div *ngIf="selectedBreed" class="row justify-content-center mt-4">
+    <div class="col-md-8 text-center">
+      <h3>{{ selectedBreed.name }}</h3>
+      <p>{{ selectedBreed.description }}</p>
+    </div>
+  </div>
+
+  <!-- Sección de imágenes en carrusel -->
+  <div *ngIf="images.length > 0" class="row justify-content-center mt-4">
+    <div class="col-md-8 text-center">
+      <h4>Images</h4>
+      <div id="catCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let img of images; let i = index" [class.active]="i === 0">
+            <img [src]="img.url" class="d-block w-100" alt="cat image" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

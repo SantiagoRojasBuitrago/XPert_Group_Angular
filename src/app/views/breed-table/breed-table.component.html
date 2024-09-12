@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <!-- Campo de búsqueda de texto -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input [(ngModel)]="searchTerm" placeholder="Search breeds" class="form-control" />
+        <button (click)="filterBreeds()" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4 mb-4"> <!-- Añadido mb-4 para espacio extra -->
+    <div class="col-md-6 text-center">
+      <button (click)="goBack()" class="btn btn-secondary">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Tabla para mostrar los resultados de la búsqueda -->
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Origin</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filtra las razas en función del término de búsqueda -->
+          <tr *ngFor="let breed of filteredBreeds">
+            <td>{{ breed.name }}</td>
+            <td>{{ breed.origin }}</td>
+            <td>{{ breed.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

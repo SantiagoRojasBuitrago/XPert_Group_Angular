@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body text-center">
+          <h2 class="card-title">Welcome, {{ user.username }}</h2>
+          <p class="card-text">You are logged in!</p>
+
+          <h3 class="mb-4">Choose an Option:</h3>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a [routerLink]="['/table']" class="btn btn-outline-primary w-100">View Cat Table</a>
+            </li>
+            <li class="list-group-item">
+              <a [routerLink]="['/breeds']" class="btn btn-outline-secondary w-100">Select Cat Breeds</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

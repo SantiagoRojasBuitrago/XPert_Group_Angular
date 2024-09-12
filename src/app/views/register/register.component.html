@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Register</h2>
+          <form (ngSubmit)="register()">
+            <div class="form-group mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input 
+                id="username" 
+                [(ngModel)]="username" 
+                name="username" 
+                class="form-control" 
+                placeholder="Enter your username" 
+                required 
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input 
+                id="password" 
+                [(ngModel)]="password" 
+                name="password" 
+                type="password" 
+                class="form-control" 
+                placeholder="Enter your password" 
+                required 
+              />
+            </div>
+            <div class="form-group mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input 
+                id="confirmPassword" 
+                [(ngModel)]="confirmPassword" 
+                name="confirmPassword" 
+                type="password" 
+                class="form-control" 
+                placeholder="Confirm your password" 
+                required 
+              />
+            </div>
+            <div class="d-grid mb-3">
+              <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+            <div class="text-center">
+              <p>¿Ya tienes una cuenta?</p>
+              <a href="/login" class="btn btn-secondary">Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
